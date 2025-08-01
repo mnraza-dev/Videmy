@@ -1,19 +1,8 @@
 FROM node:20.11.0-alpine
-
 WORKDIR /app
-
-# Install pnpm
 RUN npm install -g pnpm
-
-# Copy package dependencies
 COPY package*.json pnpm-lock.yaml ./
-
-# Install dependencies
 RUN pnpm install --ignore-scripts
-
-# Copy source code
 COPY . .
-
 EXPOSE 4000
-
 CMD ["pnpm", "run", "dev"]
