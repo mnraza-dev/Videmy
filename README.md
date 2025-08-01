@@ -45,15 +45,42 @@ Videmy is a modern video-sharing platform where users can upload, watch, and int
 ---
 
 ## 📦 Folder Structure
-
-streamly/
-├── client/ # React frontend
-│ └── ...
-├── server/ # Node.js + Express API
-│ └── ...
+```bash
+Videmy/
+├── frontend/                    # React frontend
+│   ├── src/
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   ├── index.css
+│   │   └── assets/
+│   ├── public/
+│   ├── package.json
+│   ├── vite.config.js
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── README.md
+│   ├── Dockerfile
+│   └── .gitignore
+├── backend/                     # Node.js + Express API
+│   ├── src/
+│   │   ├── app.js
+│   │   ├── index.js
+│   │   ├── constants.js
+│   │   ├── config/
+│   │   ├── controllers/
+│   │   ├── middlewares/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   └── utils/
+│   ├── package.json
+│   ├── Dockerfile
+│   ├── .gitignore
+│   ├── .eslintrc
+│   ├── .prettierrc
+│   └── .prettierIgnore
 ├── README.md
-└── .env # Environment variables
-
+└── docker-compose.yaml
+```
 ---
 
 ## 🧪 Setup Instructions
@@ -67,7 +94,7 @@ streamly/
 2. Backend Setup
 
    ```bash
-   cd server
+   cd backend
    pnpm install
    pnpm run dev
 
@@ -76,9 +103,9 @@ streamly/
 3. Frontend Setup
 
    ```bash
-   cd client
-   npm install
-   npm start
+   cd frontend
+   pnpm install
+   pnpm run dev
    ```
 
 4. Configure Environment
@@ -96,7 +123,7 @@ streamly/
    
    # Add other environment variables as needed
    # JWT_SECRET=your_jwt_secret_here
-   # CORS_ORIGIN=http://localhost:3000
+   # CORS_ORIGIN=http://localhost:5173
    ```
    
    **For Docker Development:**
