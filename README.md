@@ -82,10 +82,22 @@ streamly/
    ```
 
 4. Configure Environment
-   Create a .env file in /server and /client as needed:
-
-```bash
-MONGO_URI=your_mongo_connection
-JWT_SECRET=your_jwt_secret
-CLOUDINARY_URL=
-```
+   
+   **Backend Environment Setup:**
+   
+   Create a `.env` file in the `backend/` directory:
+   ```bash
+   # Server Configuration
+   PORT=4000
+   NODE_ENV=development
+   
+   # Database Configuration
+   MONGODB_URI=mongodb://localhost:27017/videmy
+   
+   # Add other environment variables as needed
+   # JWT_SECRET=your_jwt_secret_here
+   # CORS_ORIGIN=http://localhost:3000
+   ```
+   
+   **For Docker Development:**
+   The `MONGODB_URI` will automatically be set to `mongodb://mongodb:27017/videmy` when running with Docker Compose.
